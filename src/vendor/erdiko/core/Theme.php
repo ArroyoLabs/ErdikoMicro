@@ -242,9 +242,13 @@ class Theme extends Container
     }
 
     /**
-     *
+     * Render container to HTML
+     * 
+     * @param mixed $content, rendered html (body content)
+     * @param mixed $data, data injected from Response/Controller
+     * @return string $html
      */
-    public function toHtml($content, $data)
+    public function toHtml($content = null, $data = null)
     {
         // error_log("toHtml");
         $this->setContent($content); // rendered html (body content)

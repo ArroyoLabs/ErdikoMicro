@@ -97,9 +97,11 @@ abstract class Container
     /**
      * Render container to HTML
      * 
+     * @param mixed $content, rendered html (body content)
+     * @param mixed $data, data injected from Response/Controller
      * @return string $html
      */
-    public function toHtml()
+    public function toHtml($content = null, $data = null)
     {
         $filename = $this->getTemplateFolder().$this->_template;
         $data = (is_subclass_of($this->_data, 'erdiko\core\Container')) ? $this->_data->toHtml() : $this->_data;
